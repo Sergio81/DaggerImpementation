@@ -34,7 +34,6 @@ class NetworkModule {
 
     @Provides
     fun providesCountriesService(
-        okHttpClient: OkHttpClient,
         moshi: Moshi
     ) : CountriesApi = Retrofit.Builder()
         .baseUrl("https://restcountries.com")
