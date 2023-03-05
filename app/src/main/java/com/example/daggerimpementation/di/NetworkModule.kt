@@ -1,5 +1,6 @@
 package com.example.daggerimpementation.di
 
+import com.example.daggerimpementation.common.Constants.BASE_URL
 import com.example.daggerimpementation.data.remote.CountriesApi
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -36,7 +37,7 @@ class NetworkModule {
     fun providesCountriesService(
         moshi: Moshi
     ) : CountriesApi = Retrofit.Builder()
-        .baseUrl("https://restcountries.com")
+        .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
         .create(CountriesApi::class.java)
